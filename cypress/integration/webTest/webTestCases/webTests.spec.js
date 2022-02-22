@@ -2,7 +2,6 @@
 import { When, Then, And } from "cypress-cucumber-preprocessor/steps";
 import Actions from "../../Actions/Actions";
 import Asserts from "../../Actions/Asserts";
-import Locators from "../../../support/cssLocators";
 
 var productName = '';
 var productPrize = '';

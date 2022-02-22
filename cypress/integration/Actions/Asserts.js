@@ -1,6 +1,8 @@
 /// <reference types="Cypress" />
 import Locators from "../../support/cssLocators";
 
+var userName = '';
+
 export default class Asserts {
 
     static verifyUserIsCreated() {
@@ -10,13 +12,17 @@ export default class Asserts {
         })
     }
 
+    static setUserName(user){
+
+        this.userName = user;
+    }
+
     static verifyIfLoggedInOut(status) {
 
         switch (status) {
             case 'LoggedIn':
-                let userName = Cypress.env('userName');
                 let userProfile1 = Locators.webElement('userProfile');
-                userProfile1.should('have.text', 'Welcome ' + userName);
+                userProfile1.should('have.text', 'Welcome ' + this.userName);
                 let logInLink1 = Locators.webElement('LogIn');
                 logInLink1.should('not.be.visible');
                 let logOutLink1 = Locators.webElement('LogOut');

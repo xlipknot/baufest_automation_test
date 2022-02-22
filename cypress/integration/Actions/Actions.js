@@ -1,5 +1,11 @@
 /// <reference types="Cypress" />
+import randomstring from "randomstring";
 import Locators from "../../support/cssLocators";
+import Asserts from "../Actions/Asserts";
+
+let userName = '';
+let password = '';
+
 
 export default class Actions {
 
@@ -9,22 +15,21 @@ export default class Actions {
 
             case 'SignUp':
                 let userSignUpTxt = Locators.webElement('username_signUp_text');
-                let userSignUp = Cypress.env('userName');
-                userSignUpTxt.type(userSignUp, { force: true });
+                userName = randomstring.generate();
+                userSignUpTxt.type(userName, { force: true });
+                Asserts.setUserName(userName);
 
                 let pwdSignUpTxt = Locators.webElement('password_signUp_text');
-                let passSignUp = Cypress.env('password');
-                pwdSignUpTxt.type(passSignUp, { force: true });
+                password = randomstring.generate();
+                pwdSignUpTxt.type(password, { force: true });
                 break;
 
             case 'LogIn':
                 let userLoginTxt = Locators.webElement('username_login_text');
-                let userLogin = Cypress.env('userName');
-                userLoginTxt.type(userLogin, { force: true });
+                userLoginTxt.type(userName, { force: true });
 
                 let pwdLoginTxt = Locators.webElement('password_login_text');
-                let pwdLogin = Cypress.env('password');
-                pwdLoginTxt.type(pwdLogin, { force: true });
+                pwdLoginTxt.type(password, { force: true });
                 break;
         }
     }

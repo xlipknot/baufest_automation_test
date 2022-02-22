@@ -25,6 +25,7 @@
     "commonPath": "cypress/integration/common"
   },
   "dependencies": {
-    "faker": "^6.6.6"
+    "faker": "^6.6.6",
+    "randomstring": "^1.2.2"
   }
 }
