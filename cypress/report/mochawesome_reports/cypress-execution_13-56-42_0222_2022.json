@@ -1,0 +1,111 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-02-22T19:56:41.292Z",
+    "end": "2022-02-22T19:56:41.992Z",
+    "duration": 700,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "5d5dd039-5d11-4567-9fa3-148b0005c052",
+      "title": "",
+      "fullFile": "cypress/integration/apiTest/petStore.feature",
+      "file": "cypress/integration/apiTest/petStore.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e4707880-e0cc-4e82-b7d6-a4c20c2069b1",
+          "title": "Pet Store Web Service",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Add a pet",
+              "fullTitle": "Pet Store Web Service Add a pet",
+              "timedOut": null,
+              "duration": 506,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {
+                "message": "Error: Step implementation missing for: ",
+                "estack": "Error: Step implementation missing for: \n    at Context.resolveAndRunStepDefinition (http://localhost:44323/__cypress/tests?p=cypress/integration/apiTest/petStore.feature:10603:11)\n    at Context.eval (http://localhost:44323/__cypress/tests?p=cypress/integration/apiTest/petStore.feature:9918:35)",
+                "diff": null
+              },
+              "uuid": "8819b257-599f-462c-ba00-aade6f07f9a5",
+              "parentUUID": "e4707880-e0cc-4e82-b7d6-a4c20c2069b1",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "8819b257-599f-462c-ba00-aade6f07f9a5"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 506,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "cypress-execution",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportFilename": "cypress-execution",
+        "reportDir": "cypress/report/mochawesome_reports",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "timestamp": "HH/MM/ss_mmdd_yyyy"
+      },
+      "version": "6.0.1"
+    }
+  }
+}

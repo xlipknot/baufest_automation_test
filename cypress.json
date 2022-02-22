@@ -3,5 +3,14 @@
     "video": false,
     "chromeWebSecurity": false,
     "viewportWidth": 1920,
-    "viewportHeight": 1080
+    "viewportHeight": 1080,
+    "reporter": "mochawesome",
+    "reporterOptions": {
+        "reportFilename": "cypress-execution",
+        "reportDir": "cypress/report/mochawesome_reports",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "timestamp": "HH/MM/ss_mmdd_yyyy"
+    }
 }

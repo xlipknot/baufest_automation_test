@@ -1,7 +1,7 @@
 {
     "env": {
         "baseURL": "https://www.demoblaze.com/index.html",
-        "userName": "Rodolfo Reyes",
-        "password": "P@ssw0rd123"
+        "petStoreURL": "https://petstore.swagger.io/",
+        "petID":"202202"
     }
 }

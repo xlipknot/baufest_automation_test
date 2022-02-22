@@ -1,0 +1,145 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-02-22T19:56:47.502Z",
+    "end": "2022-02-22T19:57:01.341Z",
+    "duration": 13839,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "8d3438a6-9c11-4b0d-814d-da54b5b1a3b0",
+      "title": "",
+      "fullFile": "cypress/integration/webTest/webTestCases.feature",
+      "file": "cypress/integration/webTest/webTestCases.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c6eafa83-45bd-4d90-871f-8cfdcffe8dbd",
+          "title": "Web test cases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Create user",
+              "fullTitle": "Web test cases Create user",
+              "timedOut": null,
+              "duration": 3798,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "c378154d-57c5-402a-9423-cae3559a4dc7",
+              "parentUUID": "c6eafa83-45bd-4d90-871f-8cfdcffe8dbd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login and logout user",
+              "fullTitle": "Web test cases Login and logout user",
+              "timedOut": null,
+              "duration": 2798,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "4c8e7732-e02b-4c3d-ab25-a38e7792646d",
+              "parentUUID": "c6eafa83-45bd-4d90-871f-8cfdcffe8dbd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Add a laptop to the cart",
+              "fullTitle": "Web test cases Add a laptop to the cart",
+              "timedOut": null,
+              "duration": 2410,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "c508a4f5-479d-4e12-b295-2177dea870c0",
+              "parentUUID": "c6eafa83-45bd-4d90-871f-8cfdcffe8dbd",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c378154d-57c5-402a-9423-cae3559a4dc7",
+            "4c8e7732-e02b-4c3d-ab25-a38e7792646d",
+            "c508a4f5-479d-4e12-b295-2177dea870c0"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 9006,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "cypress-execution",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportFilename": "cypress-execution",
+        "reportDir": "cypress/report/mochawesome_reports",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "timestamp": "HH/MM/ss_mmdd_yyyy"
+      },
+      "version": "6.0.1"
+    }
+  }
+}
