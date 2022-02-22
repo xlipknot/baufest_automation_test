@@ -4,8 +4,8 @@ import Actions from "../../Actions/Actions";
 import Asserts from "../../Actions/Asserts";
 import Locators from "../../../support/cssLocators";
 
-var productName;
-var productPrize;
+var productName = '';
+var productPrize = '';
 //--------------------------------------- Create User ---------------------------------------
 Then('I enter username and password for {string}', (menu) => {
 
@@ -37,13 +37,14 @@ When('I filter by {string}', (category) => {
 Then('I pick the first element', () => {
 
     Actions.selectFirstProduct();
-    productPrize = Actions.getProducPrize();
-    cy.wrap(Actions.getProductName()).then((text)=>{
-        //productName = text;
-        cy.log('productName: ' + text);
+    cy.wrap(Actions.getProductName()).then((prodName)=>{
+
+        productName = prodName.id;
     })
-    //cy.log('productName: ' + productName);
-    //cy.log('productPrize: ' + productPrize);
+    cy.wrap(Actions.getProductPrize()).then((prodPrize)=>{
+
+        productPrize = prodPrize.id.slice(1).slice(0,-14);
+    })
 })
 
 Then('I add it to the cart', () => {
@@ -54,5 +55,5 @@ Then('I add it to the cart', () => {
 And('I verify the product was added', () => {
 
     
-    //Asserts.verifyProductIsAdded(productName, productPrize);
+    Asserts.verifyProductIsAdded(productName, productPrize);
 })

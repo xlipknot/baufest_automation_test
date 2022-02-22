@@ -39,12 +39,7 @@ export default class Asserts {
         let productTable = Locators.webElement('productTable');
         productTable.should('not.be.empty');
         let product = Locators.webElement('prodName');
-        product.invoke('text').then(text=>{
-            //return text.trim();
-            //product.should('have.text',productName);
-            //expect(text).to.eq(productName)
-        })
-        
+        product.should('have.text',productName);
         let prize = Locators.webElement('prodPrize');
         prize.should('have.text',productPrize);
     }

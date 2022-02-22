@@ -23,5 +23,8 @@
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": true,
     "commonPath": "cypress/integration/common"
+  },
+  "dependencies": {
+    "faker": "^6.6.6"
   }
 }

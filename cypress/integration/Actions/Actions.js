@@ -61,18 +61,30 @@ export default class Actions {
 
     static getProductName() {
 
-        return new Promise((resolve) => {
-            let productName = Locators.webElement('productName');
-            let text = productName.invoke('text');
-            resolve(text);
+        let productName = Locators.webElement('productName');
+        let prodName = {};
+
+        productName.invoke('text').then((text) => {
+            return new Promise((resolve)=>{
+                prodName.id = text;
+                resolve(text);
+            })
         })
+        return prodName;
     }
 
-    static getProducPrize() {
+    static getProductPrize() {
+
         let productPrize = Locators.webElement('productPrize');
-        productPrize.invoke('text').then(text => {
-            return text;
+        let prodPrize = {};
+
+        productPrize.invoke('text').then((text) => {
+            return new Promise((resolve)=>{
+                prodPrize.id = text;
+                resolve(text);
+            })
         })
+        return prodPrize;
     }
 
     static addToCart() {
