@@ -1,7 +1,6 @@
 {
     "env": {
         "baseURL": "https://www.demoblaze.com/index.html",
-        "petStoreURL": "https://petstore.swagger.io/",
-        "petID":"202202"
+        "petStoreURL": "https://petstore.swagger.io/"
     }
 }

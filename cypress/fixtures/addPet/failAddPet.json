@@ -1,0 +1,60 @@
+{
+  "body": {
+    "code": 500,
+    "type": "unknown",
+    "message": "something bad happened"
+  },
+  "headers": {
+    "date": "Wed, 23 Feb 2022 01:19:12 GMT",
+    "content-type": "application/json",
+    "transfer-encoding": "chunked",
+    "connection": "keep-alive",
+    "access-control-allow-origin": "*",
+    "access-control-allow-methods": "GET, POST, DELETE, PUT",
+    "access-control-allow-headers": "Content-Type, api_key, Authorization",
+    "server": "Jetty(9.2.9.v20150224)"
+  },
+  "status": 500,
+  "statusText": "Internal Server Error",
+  "isOkStatusCode": false,
+  "requestHeaders": {
+    "Connection": "keep-alive",
+    "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36",
+    "accept": "*/*",
+    "accept-encoding": "gzip, deflate",
+    "content-type": "application/json",
+    "content-length": 122
+  },
+  "requestBody": "{\"id\":\"asdf\",\"category\":{\"id\":0,\"name\":\"string\"},\"name\":\"doggie\",\"photoUrls\":[\"string\"],\"tags\":[{\"id\":0,\"name\":\"string\"}]}",
+  "duration": 100,
+  "allRequestResponses": [
+    {
+      "Request Body": "{\"id\":\"asdf\",\"category\":{\"id\":0,\"name\":\"string\"},\"name\":\"doggie\",\"photoUrls\":[\"string\"],\"tags\":[{\"id\":0,\"name\":\"string\"}]}",
+      "Request Headers": {
+        "Connection": "keep-alive",
+        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36",
+        "accept": "*/*",
+        "accept-encoding": "gzip, deflate",
+        "content-type": "application/json",
+        "content-length": 122
+      },
+      "Request URL": "https://petstore.swagger.io/v2/pet",
+      "Response Body": {
+        "code": 500,
+        "type": "unknown",
+        "message": "something bad happened"
+      },
+      "Response Headers": {
+        "date": "Wed, 23 Feb 2022 01:19:12 GMT",
+        "content-type": "application/json",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive",
+        "access-control-allow-origin": "*",
+        "access-control-allow-methods": "GET, POST, DELETE, PUT",
+        "access-control-allow-headers": "Content-Type, api_key, Authorization",
+        "server": "Jetty(9.2.9.v20150224)"
+      },
+      "Response Status": 500
+    }
+  ]
+}

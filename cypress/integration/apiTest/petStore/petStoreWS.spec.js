@@ -1,24 +1,38 @@
 /// <reference types="Cypress" />
-import { Given } from "cypress-cucumber-preprocessor/steps";
+import { Given, Then } from "cypress-cucumber-preprocessor/steps";
 import ApiActions from "../../Actions/ApiActions";
 
 
 //-------------------------------------- Add a pet --------------------------------------
-Given('I add a pet', () => {
+Given('I add a pet successfully', () => {
 
     ApiActions.addPet();
 })
 
-
-//-------------------------------------- Get a pet --------------------------------------
-Given('I get a pet', () => {
-
-    ApiActions.getPet();
+Then('I fail adding a pet', () => {
+    ApiActions.failAddingPet();
 })
 
 
 //-------------------------------------- Get a pet --------------------------------------
-Given('I update a pet', () => {
+Given('I get a pet successfully', () => {
+
+    ApiActions.getPet();
+})
+
+Then('I fail getting a pet', () => {
+
+    ApiActions.failGettingPet();
+})
+
+
+//-------------------------------------- Get a pet --------------------------------------
+Given('I update a pet successfully', () => {
 
     ApiActions.updatePet();
+})
+
+Then('I fail updating a pet', () => {
+
+    ApiActions.failUpdatingPet();
 })

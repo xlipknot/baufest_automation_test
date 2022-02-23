@@ -1,11 +1,13 @@
 /// <reference types="Cypress" />
+
+import randomstring from "randomstring";
+
 let endpoint = Cypress.env('petStoreURL');
 
 export default class ApiActions {
 
     static addPet() {
 
-        const petId = Cypress.env('petID');
         let addEndPoint = endpoint + 'v2/pet'
         cy.request({
 
@@ -29,28 +31,27 @@ export default class ApiActions {
                 ],
                 "status": "available"
             }
-        }).then(response => {
-            cy.writeFile('cypress/fixtures/addPet.json', response);
+        }).then((response) => {
+            cy.writeFile('cypress/fixtures/addPet/addPet.json', response);
             expect(response.status).to.eq(200);
         })
     }
 
-    static getPet(){
+    static getPet() {
 
-        const petId = Cypress.env('petID');
         let getEndPoint = endpoint + 'v2/pet/202202';
 
         cy.request({
 
             method: 'GET',
             url: getEndPoint
-        }).then(response=>{
-            cy.writeFile('cypress/fixtures/getPet.json', response);
+        }).then((response) => {
+            cy.writeFile('cypress/fixtures/getPet/getPet.json', response);
             expect(response.status).to.eq(200);
         })
     }
 
-    static updatePet(){
+    static updatePet() {
 
         let getEndPoint = endpoint + 'v2/pet/';
 
@@ -58,27 +59,108 @@ export default class ApiActions {
 
             method: 'PUT',
             url: getEndPoint,
-            body:{
+            body: {
                 "id": 202202,
                 "category": {
-                  "id": 222,
-                  "name": "update"
+                    "id": 222,
+                    "name": "update"
                 },
                 "name": "doggie",
                 "photoUrls": [
-                  "new photo url"
+                    "new photo url"
                 ],
                 "tags": [
-                  {
-                    "id": 210,
-                    "name": "xolo"
-                  }
+                    {
+                        "id": 210,
+                        "name": "xolo"
+                    }
                 ],
                 "status": "available"
             }
-        }).then(response=>{
-            cy.writeFile('cypress/fixtures/updatePet.json', response);
+        }).then((response) => {
+            cy.writeFile('cypress/fixtures/updatePet/updatePet.json', response);
             expect(response.status).to.eq(200);
+        })
+    }
+
+    static failAddingPet() {
+
+        let addEndPoint = endpoint + 'v2/pet'
+        cy.request({
+
+            method: 'POST',
+            url: addEndPoint,
+            body: {
+                "id": "asdf",
+                "category": {
+                    "id": 0,
+                    "name": "string"
+                },
+                "name": "doggie",
+                "photoUrls": [
+                    "string"
+                ],
+                "tags": [
+                    {
+                        "id": 0,
+                        "name": "string"
+                    }
+                ]
+            },
+            failOnStatusCode: false
+        }).then((resp) => {
+            cy.writeFile('cypress/fixtures/addPet/failAddPet.json', resp);
+            expect(resp.status).to.eq(500);
+        })
+    }
+
+    static failGettingPet() {
+
+        let id = randomstring.generate();
+        let getEndPoint = endpoint + 'v2/pet/' + id;
+
+        cy.request({
+
+            method: 'GET',
+            url: getEndPoint,
+            failOnStatusCode: false
+        }).then((resp) => {
+            cy.writeFile('cypress/fixtures/getPet/failGetPet.json', resp);
+            expect(resp.status).to.eq(404);
+        })
+    }
+
+    static failUpdatingPet() {
+
+        let id = randomstring.generate();
+        let getEndPoint = endpoint + 'v2/pet/';
+
+        cy.request({
+
+            method: 'PUT',
+            url: getEndPoint,
+            body: {
+                "id": "dbckwjdncl",
+                "category": {
+                    "id": 222,
+                    "name": "update"
+                },
+                "name": "doggie",
+                "photoUrls": [
+                    "new photo url"
+                ],
+                "tags": [
+                    {
+                        "id": 210,
+                        "name": "xolo"
+                    }
+                ],
+                "status": "available"
+            },
+            failOnStatusCode: false
+        }).then((resp) => {
+            cy.writeFile('cypress/fixtures/updatePet/updatePet.json', resp);
+            expect(resp.status).to.eq(500);
         })
     }
 }
