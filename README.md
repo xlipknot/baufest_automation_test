@@ -1,9 +1,18 @@
 # baufest_automation_test
 Automation framework for Baufest test
 
-To run this tests after cloning the project, it must be eecuted the command:
+To run this tests after cloning the project, you will have to open a new terminal and it must be executed the command:
  npm install
-this so all the dependencies get installed
+this so all the dependencies get installed, after that run:
+ npx cypress open
+this will install the node_modules folder and will open the test runner
+
+Once the test runner is opened, you can execute the feature you want just by clicking on the hyperlink and you'll be able to see the execution of every test
+
+If you want to run all the tests headlessly, run the command:
+ npx cypress run
+this way won't be able to watch the execution, but a report will be showned. Also this way a new report will be populated in the path mentiones below.
+
 
 This Framework tests Web and API functionalities: 
 All the code is found in the path: cypress/integration
