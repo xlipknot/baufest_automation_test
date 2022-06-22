@@ -1,4 +1,4 @@
-# baufest_automation_test
+# Demo_automation_test
 Demo Automation framework
 
 To run this tests after cloning the project, you will have to open a new terminal and it must be executed the command:
