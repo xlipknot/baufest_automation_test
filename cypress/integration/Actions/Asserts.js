@@ -49,4 +49,23 @@ export default class Asserts {
         let prize = Locators.webElement('prodPrize');
         prize.should('have.text',productPrize);
     }
+
+    static verifyDefaultPassenger(){
+        
+    }
+
+    static verifyPricesSorted(order){
+
+        switch(order){
+            case 'descending':
+                flightResults = Locators.webElement('resultsTable');
+                flightResults.should('not.be.empty');
+                priceColumn = Locators.webElement('priceColumn');
+                priceColumn.slice();
+                for(let i=0;i<priceColumn.size;i++){
+                    priceColumn[i].should('be.')
+                }
+                break;
+        }
+    }
 }

@@ -38,6 +38,17 @@ export default class Locators{
             case 'productName': return cy.get('h2.name');
             case 'productPrize': return cy.get('h3.price-container');
             case 'addToCart': return cy.get('a.btn.btn-success.btn-lg').contains('Add to cart');
+
+            //Flights Page
+            case 'flightsMenu': return cy.get('#navbarSupportedContent ul li a.nav-link').contains('Flights');
+            case 'flightsFromDropdown': return cy.get('#flight-from');
+            case 'flightsToDropdown': return cy.get('#flight-to');
+            case 'departingDateCal': return cy.get('#departing');
+            case 'returningDateCal': return cy.get('#returning');
+            case 'searchBtn': return cy.get('.btn.btn-primary.button-ns').contains('Search');
+            case 'sortPricesDropDown': return cy.get('#sort');
+            case 'resultsTable': return cy.get('#results');
+            case 'priceColumn': return cy.get('#results div.col-md-2 span.price');
         }
     }
 }

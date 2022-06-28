@@ -14,3 +14,9 @@ When('I click on {string} menu', (menu) => {
     let topMenu = Locators.webElement(menu);
     topMenu.click({ force: true });
 })
+
+Given('I go to flights page',()=>{
+    let baseUrl = Cypress.env('baseURL');
+
+    cy.visit(baseUrl);
+})

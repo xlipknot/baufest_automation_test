@@ -1,6 +1,6 @@
 {
     "env": {
-        "baseURL": "https://www.demoblaze.com/index.html",
+        "baseURL": "file:///home/xlipknot/Descargas/site/site/flights.html",
         "petStoreURL": "https://petstore.swagger.io/"
     }
 }

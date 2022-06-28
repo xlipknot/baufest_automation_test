@@ -98,4 +98,56 @@ export default class Actions {
         add.click({ force: true });
         cy.wait(3);
     }
+
+    static clickOnMenu(menu){
+    
+        switch(menu){
+
+            case 'Flights':
+                Locators.webElement(menu).click();
+                break;
+        }
+    }
+
+    static selectFromToFlight(flight){
+
+        switch(flight){
+
+            case 'From':
+                Locators.webElement('flightsFromDropdown').select('CDMX');
+                break;
+
+            case 'To':
+                Locators.webElement('flightsToDropdown').select('Chihuahua');
+                break;
+        }
+    }
+
+    static selectDepartReturnDate(date){
+
+        switch(date){
+
+            case 'Departing':
+                Locators.webElement('departingDateCal').type('20/06/2022');
+                break;
+
+            case 'Returning':
+                Locators.webElement('returningDateCal').type('28/06/2022');
+                break;
+        }
+    }
+
+    static clickOnSearch(){
+        Locators.webElement(searchBtn).click();
+    }
+
+    static sortPricesBy(order){
+
+        switch(order){
+
+            case 'descending':
+                Locators.webElement('sortPricesDropDown').select('Price descending');
+                break;
+        }
+    }
 }
