@@ -1,5 +1,5 @@
 /// <reference types="Cypress" />
-import { When, Then, And } from "cypress-cucumber-preprocessor/steps";
+import { When, Then} from "cypress-cucumber-preprocessor/steps";
 import Actions from "../../Actions/Actions";
 
 When('Click on {string}',(Flights)=>{
